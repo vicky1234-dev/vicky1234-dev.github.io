@@ -1,0 +1,238 @@
+<!DOCTYPE html>         
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+            integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="crossorigin="anonymous"
+            />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+            integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="crossorigin="anonymous"
+            />
+        <link href="index.css" rel="stylesheet">
+        <title>Document</title>
+        <style>
+            /* Center the loader */
+            #loader {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                z-index: 1;
+                width: 150px;
+                height: 150px;
+                margin: -75px 0 0 -75px;
+                border: 6px solid transparent;
+                border-radius: 50%;
+                border-top: 10px solid #3498db;
+                width: 130px;
+                height: 130px;
+                -webkit-animation: spin 2s linear infinite;
+                animation: spin 1.5s linear infinite;
+            }
+            
+            @-webkit-keyframes spin {
+                0% { -webkit-transform: rotate(0deg); }
+                100% { -webkit-transform: rotate(360deg); }
+            }
+            
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+            
+            /* Add animation to "page content" */
+            .animate-bottom {
+                position: relative;
+                -webkit-animation-name: animatebottom;
+                -webkit-animation-duration: 1s;
+                animation-name: animatebottom;
+                animation-duration: 1s
+            }
+            
+            @-webkit-keyframes animatebottom {
+                from { bottom:-100px; opacity:0 } 
+                to { bottom:0px; opacity:1 }
+            }
+            
+            @keyframes animatebottom { 
+                from{ bottom:-100px; opacity:0 } 
+                to{ bottom:0; opacity:1 }
+            }
+            
+            </style>
+    </head>
+    <body>
+        <div id="loader"></div>
+        <div class="wrapper">
+            <div class="header">
+                <img src="images/logo.svg">
+                <form action="">
+                    <input type="text" class="input" placeholder="Search here">
+                </form>
+            </div>
+            <div class="searchResults">
+                <h2 class="heading"> Results</h2>
+                <div class="searchedMovies"></div>
+            </div>
+            <br>
+            <div class="discover section" data-lzscroll-section="popular">
+                <img src="images/searchicon.svg"> <h2 class="heading"> DISCOVER</h2>
+                <div class="discover__movies sectionmovie movieClass">
+                
+                </div>
+                <button class="more">View More</button>
+            </div>
+            
+            <div class="trending section" data-lzscroll-section="now_playing" >
+                <img src="images/white_trending.svg"> <h2 class="heading"> TRENDING</h2>
+                <div class="trending__movies sectionmovie movieClass">
+                </div>
+                <button class="more">View More</button>
+            </div>
+            
+            <div class="top__rated section" data-lzscroll-section="top_rated">
+                <img src="images/white_trending.svg"> <h2 class="heading"> TOP RATED</h2>
+                <div class="toprated__movies sectionmovie movieClass">
+                </div>
+                <button class="more">View More</button>
+            </div>
+            
+            <div class="upcoming section" data-lzscroll-section="upcoming">
+                <img src="images/white_trending.svg"> <h2 class="heading"> UP COMING</h2>
+                <div class="upcoming__movies sectionmovie movieClass">
+                </div>
+                <button class="more">View More</button>
+            </div>
+            
+        </div>
+        
+        <div class="video__player" data-tag = 'modal'>
+            <iframe style="border:0" width="100%" height="80%" allow="autoplay" data-tag = 'iframe' allowfullscreen>
+            </iframe>
+            <button class="close__player" data-tag = 'closemodal'>X</button>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="crossorigin="anonymous"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <script src="lazyload.js"></script>
+        <script src="js/script.js"></script>
+        <script src="pagination.js"></script>
+        <script src="buttonlistener.js"></script>
+        <script src="modal.js"></script>
+        <script id="template" type="x-tmpl-mustache">
+                    <div class ="movie" data-id = "{{movie.id}}" data-target = 'modal' >
+                        <div class="movie__wrapper">
+                            <div class="movie__image">
+                                <img src = "https://image.tmdb.org/t/p/w200{{movie.poster_path}}" >
+                                <i class = "visibilityhidden fas fa-play-circle" aria - hidden = "true" ></i>  
+                            </div>
+                            <div class = 'movie__details'>
+                                <p class="movie__name">{{movie.original_title}}</p>
+                                <p class='movie__viewcount'>{{movie.vote_count}} voting</p>
+                                <span class='movie__genres'> {{movie.genre_ids.0}} </span>
+                                <span class='movie__genres'>${this.genres[( ( movie.genre_ids ) ?  movie.genre_ids[1] != undefined : undefined ) ? movie.genre_ids[1] : 'empty']}</span>
+                                <span class='movie__genres'>${this.genres[( ( movie.genre_ids ) ?  movie.genre_ids[2] != undefined : undefined ) ? movie.genre_ids[2] : 'empty']}</span>
+                                <p class="movie__info">${movie.overview}</p>
+                            </div>
+                        </div>
+                    </div>
+            `
+        </script>
+        <script> 
+            let leftButton , rightButton , movie;
+            initialPageload();
+            
+            function initialPageload() {                      //slick on page load
+                movies.init();
+
+                //lazy load
+                scrollLoad.init({
+                    element: '.movieClass',
+                    onReach(element, config) {
+
+                        movies.c = movies.c + 1;
+                        element.classList.remove('lazy');
+
+                        let key =  element.parentNode.dataset.lzscrollSection ;
+                        movies.displayHomepage(movies.getlink(key), element, false).then((resp) => {
+
+                            addSlick(element.classList[0],element);
+                            modal.init($(element).find("[data-target~='modal']"))
+
+                        });
+
+                        $('#loader').css("display" , "none")
+                    }
+                })          
+            }       
+
+            function addSlick (classname , element) {                         //addSlick('movieClass');
+                
+                $(`.${classname}`).slick({                        // make slick properties
+                    infinite: true,
+                    slidesToShow: 5.0,
+                    slidesToScroll: 5.0,
+                    centerPadding: '0px',
+                    autoplay : false,
+                    speed: 400,
+                    responsive: [
+                        {
+                            breakpoint: 1410,
+                            settings: {
+                                infinite: true,
+                                slidesToShow: 3.0,
+                                slidesToScroll: 3,
+                                centerMode: false,
+                                autoplay : false,
+                                speed: 400,
+                            }
+                        },
+                        {                                               
+                            breakpoint: 783,
+                            settings: {
+                                infinite: true,
+                                slidesToShow: 2.0,
+                                slidesToScroll: 2.0,
+                                autoplay : false,
+                                speed: 400,
+                            }
+                        }
+                    ]   
+                }).on({breakpoint: function(){
+                    $(".slick-prev").html('<i class="fas fa-chevron-left" style="font-size:29px;"></i>');  //slick button maker
+                    $(".slick-next").html('<i class="fas fa-chevron-right" style="font-size:29px;"></i>');  //slick button maker
+                                        console.log('htSlide');
+
+                    $(element).find('.last-active').removeClass('last-active')
+                    $(element).find('.slick-active').last().addClass('last-active')
+
+                }}
+                
+                );
+               $(`.${classname}`).on('afterChange', function(event, slick, currentSlide, nextSlide){
+                    $(element).find('.slick-active').last().addClass('last-active')
+                });
+                
+                $(element).find('.slick-active').last().addClass('last-active')
+                $(".slick-prev").html('<i class="fas fa-chevron-left" style="font-size:29px;"></i>');  //slick button maker
+                $(".slick-next").html('<i class="fas fa-chevron-right" style="font-size:29px;"></i>');  //slick button maker                              
+             
+            }
+        
+            buttonlistener.init({
+                element: ".more",
+                onReach(element, config) {
+
+                }
+            })
+            
+        </script>
+    </body>
+</html> 
