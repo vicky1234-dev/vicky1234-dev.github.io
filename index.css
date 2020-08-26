@@ -376,7 +376,7 @@ a:active {
 }
 
 .slick-current:hover {
-  transform:scale3d(1.4, 1.4,1) translateX(25px) perspective(500px) ;
+  transform:scale3d(1.4, 1.4,1) translateX(39px) perspective(500px) ;
 }
 
 .last-active:hover {
