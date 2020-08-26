@@ -12,6 +12,10 @@
     box-sizing: border-box;
 }
 
+img {
+  vertical-align: middle;
+}
+
 body {
   background-image: linear-gradient(white, #e50914);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
