@@ -112,6 +112,14 @@
             <iframe style="border:0" width="100%" height="80%" allow="autoplay" data-tag = 'iframe' allowfullscreen>
             </iframe>
             <button class="close__player" data-tag = 'closemodal'>X</button>
+            <div class = 'movie__details'>
+                                <p class="movie__name">{{movie.original_title}}</p>
+                                <p class='movie__viewcount'>{{movie.vote_count}} voting</p>
+                                <span class='movie__genres'> {{movie.genre_ids.0}} </span>
+                                <span class='movie__genres'>${this.genres[( ( movie.genre_ids ) ?  movie.genre_ids[1] != undefined : undefined ) ? movie.genre_ids[1] : 'empty']}</span>
+                                <span class='movie__genres'>${this.genres[( ( movie.genre_ids ) ?  movie.genre_ids[2] != undefined : undefined ) ? movie.genre_ids[2] : 'empty']}</span>
+                                <p class="movie__info">${movie.overview}</p>
+            </div>
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.js"></script>
