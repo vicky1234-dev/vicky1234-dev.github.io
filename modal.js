@@ -21,7 +21,7 @@ const modal = {
     makeModal() {
         //const onReach = this._config.onReach
             console.log('this.dataset.id')
-            movies.fetchMovie(`http://api.themoviedb.org/3/movie/${this.dataset.id}/videos?api_key=4d47cb3ed5fd192971a9a94765f0624e`, this).then((response) => {
+            movies.fetchMovie(`https://api.themoviedb.org/3/movie/${this.dataset.id}/videos?api_key=4d47cb3ed5fd192971a9a94765f0624e`, this).then((response) => {
 
                 const t = $("[data-tag~='modal']")
                 
