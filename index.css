@@ -296,7 +296,7 @@ a:active {
 }
 
 .movie__details {
-    /* max-height: 0px; */
+    max-height: 0px; 
     opacity: 0;
     position: absolute;
     overflow: hidden;
@@ -360,10 +360,10 @@ a:active {
     width: 100%;
     opacity: 1;
     overflow: hidden;
-    /* max-width: 253px; */
     margin: auto;
     box-sizing: border-box;
     left: 0;
+    max-height: initial;
 }
 
 
@@ -407,12 +407,6 @@ a:active {
   transform:scale3d(1.4, 1.4,1) translateX(25px) perspective(500px) ;
 }
 
-.mainsection .movie:hover .movie__details {
-  top: 60%;
-  padding-right: 15px;
-  max-width: 262px;
-}
-
 .mainsection .movie {
   margin:30px;
 }
@@ -452,6 +446,7 @@ a:active {
 
   .movie:hover .movie__details {
     max-width: 240px;
+    left: 50%;
 }
     .movie__image img {
         width: 240px;
