@@ -200,9 +200,7 @@ button {
   margin-bottom: 60px;
 }
 
-.show {
-  display: block;
-}
+
 
 .searchedMovies {
   margin-top: 15px;
@@ -597,4 +595,9 @@ a:active {
         width: 100%;
     }
     
+}
+
+
+.show {
+  display: block;
 }
