@@ -201,7 +201,7 @@ button {
 }
 
 .show {
-  display: initial;
+  display: block;
 }
 
 .searchedMovies {
