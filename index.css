@@ -8,6 +8,10 @@
   src: url("fonts/Roboto-Regular.ttf") format("truetype");
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
   background-image: linear-gradient(white, #e50914);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
