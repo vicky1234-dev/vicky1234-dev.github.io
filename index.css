@@ -221,13 +221,16 @@ button {
 
 .more {
   color: azure;
-  width: 90px;
+  padding: 14px 40px;
+  border-radius: 5px;
   display: block;
   margin: auto;
   margin-bottom: 50px;
   margin-top: 20px;
   background-color: red;
   outline: none;
+  box-shadow: 0  17px 10px -10px rgba(0, 0, 0, 0.4);
+  cursor: pointer
 }
 
 .more:focus {
@@ -353,7 +356,7 @@ a:active {
 
 .draggable {
   overflow: hidden;
-  padding-bottom: 40px;
+  padding-bottom: 140px;
   padding-top: 80px;
 }
 
