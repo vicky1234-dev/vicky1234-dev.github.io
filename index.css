@@ -369,8 +369,8 @@ a:active {
 
 .draggable {
   overflow: hidden;
-  padding-bottom: 50px;
-  padding-top:60px;
+  padding-bottom: 30px;
+  padding-top:30px;
 }
 
 .movie__image {
