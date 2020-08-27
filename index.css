@@ -177,7 +177,7 @@ button {
 .movie__info {
   color: #fff;
   letter-spacing: 0.5px;
-  font-size: 16px;
+  font-size: 14px;
   max-height: 44px;
   font-weight: 300;
   transition: max-height 0.2s, transform 1s;
