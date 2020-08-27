@@ -177,12 +177,13 @@ button {
 .movie__info {
   color: #fff;
   letter-spacing: 0.5px;
-  font-size: 14px;
+  font-size: 12px;
   max-height: 44px;
   font-weight: 300;
   transition: max-height 0.2s, transform 1s;
   overflow: hidden;
   margin: auto;
+  word-break: break-all;
 }
 
 .movie__genres {
@@ -397,11 +398,11 @@ a:active {
 }
 
 .slick-current:hover {
-  transform:scale3d(1.4, 1.4,1) translateX(39px) perspective(500px) ;
+  transform:scale3d(1.3, 1.3,1) translateX(39px) perspective(500px) ;
 }
 
 .last-active:hover {
-    transform:scale3d(1.4, 1.4,1) translateX(-40px) perspective(500px) ;
+    transform:scale3d(1.3, 1.3,1) translateX(-40px) perspective(500px) ;
 }
 
 .mainsection .movie:nth-child(4n + 1):hover {
