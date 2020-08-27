@@ -231,7 +231,8 @@ button {
   background-color: red;
   outline: none;
   box-shadow: 0  17px 10px -10px rgba(0, 0, 0, 0.4);
-  cursor: pointer
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 .more:focus {
