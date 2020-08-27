@@ -54,6 +54,7 @@ const buttonlistener = {
 
             $(document).off('scroll')
             $(`.${btn.previousElementSibling.classList[0]}`).slick('unslick')
+
             btn.previousElementSibling.classList.add('more__movies')
             btn.parentNode.classList.add('mainsection')
 
