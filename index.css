@@ -636,3 +636,14 @@ a:active {
 .show {
   display: block;
 }
+
+.posstatic {
+  position: static;
+  max-height: initial;
+  opacity: 1;
+  padding: 10px;
+}
+
+.posstatic:after{
+  background-image: none;
+}

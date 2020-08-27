@@ -46,14 +46,16 @@ const modal = {
                           alert('movies not found') 
                        }
 
+                        t.find('.movie__details').addClass('posstatic')
+
                        t
                        .find("[data-tag~='closemodal']")
                        .one('click', function () {
                            console.log('closed')
                            t.removeClass('show')
                            t.find('iframe').attr('src', '')
+                           t.removeClass('posstatic')
                        })
-                
                 
                 //onReach && onReach(t)
             })

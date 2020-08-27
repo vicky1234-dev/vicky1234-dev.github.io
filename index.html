@@ -112,12 +112,12 @@
             </iframe>
             <button class="close__player" data-tag = 'closemodal'>X</button>
             <div class = 'movie__details'>
-                                <p class="movie__name">{{movie.original_title}}</p>
-                                <p class='movie__viewcount'>{{movie.vote_count}} voting</p>
-                                <span class='movie__genres'> {{movie.genre_ids.0}} </span>
-                                <span class='movie__genres'>${this.genres[( ( movie.genre_ids ) ?  movie.genre_ids[1] != undefined : undefined ) ? movie.genre_ids[1] : 'empty']}</span>
-                                <span class='movie__genres'>${this.genres[( ( movie.genre_ids ) ?  movie.genre_ids[2] != undefined : undefined ) ? movie.genre_ids[2] : 'empty']}</span>
-                                <p class="movie__info">${movie.overview}</p>
+                                <p class="movie__name"></p>
+                                <p class='movie__viewcount'></p>
+                                <span class='movie__genres'></span>
+                                <span class='movie__genres'></span>
+                                <span class='movie__genres'></span>
+                                <p class="movie__info"></p>
             </div>
         </div>
 
@@ -133,25 +133,7 @@
         <script src="pagination.js"></script>
         <script src="buttonlistener.js"></script>
         <script src="modal.js"></script>
-        <script id="template" type="x-tmpl-mustache">
-                    <div class ="movie" data-id = "{{movie.id}}" data-target = 'modal' >
-                        <div class="movie__wrapper">
-                            <div class="movie__image">
-                                <img src = "https://image.tmdb.org/t/p/w200{{movie.poster_path}}" >
-                                <i class = "visibilityhidden fas fa-play-circle" aria - hidden = "true" ></i>  
-                            </div>
-                            <div class = 'movie__details'>
-                                <p class="movie__name">{{movie.original_title}}</p>
-                                <p class='movie__viewcount'>{{movie.vote_count}} voting</p>
-                                <span class='movie__genres'> {{movie.genre_ids.0}} </span>
-                                <span class='movie__genres'>${this.genres[( ( movie.genre_ids ) ?  movie.genre_ids[1] != undefined : undefined ) ? movie.genre_ids[1] : 'empty']}</span>
-                                <span class='movie__genres'>${this.genres[( ( movie.genre_ids ) ?  movie.genre_ids[2] != undefined : undefined ) ? movie.genre_ids[2] : 'empty']}</span>
-                                <p class="movie__info">${movie.overview}</p>
-                            </div>
-                        </div>
-                    </div>
-            `
-        </script>
+        
         <script> 
             let leftButton , rightButton , movie;
             initialPageload();
