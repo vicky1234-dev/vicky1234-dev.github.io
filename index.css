@@ -375,6 +375,8 @@ a:active {
 
 .movie__image {
   position: relative;
+  border-radius: 5px;
+  background-position: center;
 }
 
 .maxheight {
