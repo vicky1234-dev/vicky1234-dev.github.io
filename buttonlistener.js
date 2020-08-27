@@ -46,11 +46,13 @@ const buttonlistener = {
                 console.log($(btn).css('background-color'))
                 $(btn).css('background-color', 'red');
 
+
                 modal.init($('.mainsection').find("[data-target~='modal']"))
                 })
                 return;
             }
 
+            $(document).off('scroll')
             $(`.${btn.previousElementSibling.classList[0]}`).slick('unslick')
             btn.previousElementSibling.classList.add('more__movies')
             btn.parentNode.classList.add('mainsection')
