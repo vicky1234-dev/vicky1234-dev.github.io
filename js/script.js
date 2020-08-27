@@ -107,7 +107,6 @@ const movies = {
                     <div class ="movie" data-id = "${movie.id}" data-target = 'modal' >
                          <div class="movie__wrapper">
                             <div class = "movie__image" style = "height: 300px;background-size: 100%;background-image: url('https://image.tmdb.org/t/p/w200${movie.poster_path}');" >
-                                 <img onerror="this.onerror=null; this.src='images/Default.png'"  >
                                  <i class = "visibilityhidden fas fa-play-circle" aria - hidden = "true" ></i>  
                              </div>
                                <div class = 'movie__details'>
