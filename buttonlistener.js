@@ -10,7 +10,7 @@ const buttonlistener = {
             this.btns = Array.from(document.querySelectorAll(`${object.element}`));
             this.onPagination();
         }
-
+    
         this._handler();
     },
 
@@ -21,6 +21,9 @@ const buttonlistener = {
         $(this.btns).click(function () {
             btn = this
             console.log(btn)
+
+            console.log($('.last-active'))
+            $('.last-active').removeClass('last-active')
 
             if (btn.parentNode.classList.contains('mainsection')) {
                 movies._pageNo = ++movies._pageNo
@@ -43,6 +46,7 @@ const buttonlistener = {
                 console.log($(btn).css('background-color'))
                 $(btn).css('background-color', 'red');
 
+                modal.init($('.mainsection').find("[data-target~='modal']"))
                 })
                 return;
             }
