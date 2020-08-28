@@ -228,7 +228,7 @@ button {
   border-radius: 5px;
   display: block;
   margin: auto;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   margin-top: 20px;
   background-color: red;
   outline: none;
@@ -273,7 +273,6 @@ a:active {
 }
 
 .section {
-  min-height: 599px;
   margin-top: 50px;
 }
 
