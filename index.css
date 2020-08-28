@@ -680,6 +680,20 @@ a:active {
   input {
     margin-top: 17px;
   }
+
+  .draggable {
+    overflow: hidden;
+    padding-bottom: 12px;
+    padding-top: 24px;
+}
+
+.section {
+  margin-top: 0px;
+}
+
+.more {
+  margin-bottom: 10px;
+}
 }
 
 .show {
