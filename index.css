@@ -407,7 +407,7 @@ a:active {
 }
 
 .last-active:hover {
-  transform: scale3d(1.2, 1.2, 1) translateX(-40px) perspective(500px);
+  transform: scale3d(1.2, 1.2, 1) translateX(-22px) perspective(500px);
 }
 
 .mainsection .movie:nth-child(6n + 0):hover {
