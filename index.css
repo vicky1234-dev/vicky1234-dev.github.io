@@ -20,7 +20,7 @@ body {
   background-image: linear-gradient(white, #e50914);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  line-height: 1.42857;
+  line-height: 1.22857;
   color: rgb(51, 51, 51);
   background-color: rgb(255, 255, 255);
   margin: 0px;
@@ -400,9 +400,7 @@ a:active {
   overflow: hidden;
 }
 
-.mainsection .movie:nth-child(4n + 0):hover {
-  transform: scale3d(1.2, 1.2, 1) translateX(-20px) perspective(500px);
-}
+
 
 .slick-current:hover {
   transform: scale3d(1.2, 1.2, 1) translateX(39px) perspective(500px);
@@ -412,7 +410,11 @@ a:active {
   transform: scale3d(1.2, 1.2, 1) translateX(-40px) perspective(500px);
 }
 
-.mainsection .movie:nth-child(4n + 1):hover {
+.mainsection .movie:nth-child(6n + 0):hover {
+  transform: scale3d(1.2, 1.2, 1) translateX(-20px) perspective(500px);
+}
+
+.mainsection .movie:nth-child(6n + 1):hover {
   transform: scale3d(1.2, 1.2, 1) translateX(25px) perspective(500px);
 }
 
@@ -440,7 +442,7 @@ a:active {
   display: inline-block;
 }
 
-@media screen and (max-width: 1410px) {
+@media screen and (max-width: 1440px) {
   .movie__details {
     margin: auto;
     left: 50%;
@@ -453,12 +455,9 @@ a:active {
   }
 
   .movie:hover .movie__details {
-    max-width: 240px;
     left: 50%;
   }
-  .movie__image img {
-    width: 240px;
-  }
+  
 
   .wrapper {
     padding: 14px;
@@ -471,8 +470,11 @@ a:active {
   form {
     width: 66%;
   }
-  .mainsection .movie {
+
+  *{
+    box-sizing: content-box;
   }
+
   .movie {
     text-align: center;
   }
@@ -490,22 +492,39 @@ a:active {
   .slick-next {
     left: 95%;
   }
+
+  .mainsection .movie:nth-child(6n + 1):hover {
+    transform: scale3d(1.2, 1.2, 1) translateX(0px) perspective(500px);
+  }
+
+  .mainsection .movie:nth-child(6n + 0):hover {
+    transform: scale3d(1.2, 1.2, 1) translateX(0px) perspective(500px);
+  }
+
+  .mainsection .movie:nth-child(5n + 0):hover {
+    transform: scale3d(1.2, 1.2, 1) translateX(-20px) perspective(500px);
+  }
+  
+  .mainsection .movie:nth-child(5n + 1):hover {
+    transform: scale3d(1.2, 1.2, 1) translateX(25px) perspective(500px);
+  }
+  
 }
 
-@media screen and (max-width: 1211px) {
+@media screen and (max-width: 1232px) {
+  .mainsection .movie:nth-child(5n + 1):hover {
+    transform: scale3d(1.2, 1.2, 1) translateX(0px) perspective(500px);
+  }
+
+  .mainsection .movie:nth-child(5n + 0):hover {
+    transform: scale3d(1.2, 1.2, 1) translateX(0px) perspective(500px);
+  }
+  .mainsection .movie:nth-child(4n):hover {
+    transform: scale3d(1.2, 1.2, 1) translateX(-20px) perspective(500px);
+  }
+
   .mainsection .movie:nth-child(4n + 1):hover {
-    transform: scale3d(1.4, 1.4, 1) translateX(0px) perspective(500px);
-  }
-
-  .mainsection .movie:nth-child(4n + 0):hover {
-    transform: scale3d(1.4, 1.4, 1) translateX(0px) perspective(500px);
-  }
-  .mainsection .movie:nth-child(3n):hover {
-    transform: scale3d(1.4, 1.4, 1) translateX(-20px) perspective(500px);
-  }
-
-  .mainsection .movie:nth-child(3n + 1):hover {
-    transform: scale3d(1.4, 1.4, 1) translateX(30px) perspective(500px);
+    transform: scale3d(1.2, 1.2, 1) translateX(30px) perspective(500px);
   }
 
   .more__movies {
@@ -517,7 +536,7 @@ a:active {
   }
 }
 
-@media screen and (max-width: 915px) {
+@media screen and (max-width: 991px) {
   .mainsection .movie:nth-child(4n + 1):hover {
     transform: scale3d(1.1, 1.1, 1) translateX(0px) perspective(500px);
   }
@@ -544,17 +563,43 @@ a:active {
   .mainsection .movie:hover {
     transform: scale3d(1.1, 1.1, 1) translateX(0px) perspective(500px);
   }
+
+  .mainsection .movie {
+    width: 28%;
+}
 }
 
 @media screen and (max-width: 610px) {
+
+  .mainsection .movie:nth-child(5n + 1):hover {
+    transform: scale3d(1, 1, 1) translateX(0px) perspective(500px);
+}
+
+.mainsection .movie:nth-child(5n + 1):hover {
+  transform: scale3d(1, 1, 1) translateX(0px) perspective(500px);
+}
+
+  .mainsection .movie:nth-child(3n):hover {
+    transform: scale3d(1, 1, 1) translateX(0px) perspective(500px);
+}
   .mainsection .movie:hover {
     transform: scale3d(1, 1, 1) translateX(0px);
   }
 
+  .mainsection .movie:nth-child(3n + 1):hover {
+    transform: scale3d(1, 1, 1) translateX(0px) perspective(500px);
+  }
   .mainsection .movie {
-    width: 49%;
+    width: 47%;
   }
 
+  .mainsection .movie:nth-child(4n + 0):hover {
+    transform: scale3d(1, 1, 1) translateX(0px) perspective(500px);
+}
+
+.mainsection .movie:nth-child(4n + 1):hover {
+  transform: scale3d(1, 1, 1) translateX(0px) perspective(500px);
+}
   .movie__details {
     position: static;
     max-height: initial;
