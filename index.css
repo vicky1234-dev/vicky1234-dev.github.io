@@ -708,13 +708,10 @@ a:active {
   max-height: initial;
   opacity: 1;
   padding: 10px;
+  transform: none;
+
 }
 
 .posstatic:after {
   background-image: none;
-}
-
-
-.movie__details--videoplayer {
-  transform: none;
 }
