@@ -713,3 +713,8 @@ a:active {
 .posstatic:after {
   background-image: none;
 }
+
+
+.movie__details--videoplayer {
+  transform: none;
+}
