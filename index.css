@@ -320,6 +320,11 @@ a:active {
   left: 82%;
 }
 
+.close__player:active {
+  outline: none;
+  border: none;
+}
+
 .visibilityhidden {
   font-size: 100px;
   visibility: hidden;
