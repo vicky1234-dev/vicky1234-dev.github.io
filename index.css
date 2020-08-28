@@ -442,7 +442,12 @@ a:active {
 }
 
 @media screen and (max-width: 1440px) {
-  
+  .movie__details {
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+  }
 
   .mainsection .movie:hover .movie__details {
     max-width: 260px;
