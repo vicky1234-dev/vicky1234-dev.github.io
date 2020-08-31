@@ -46,12 +46,11 @@ const buttonlistener = {
                 console.log($(btn).css('background-color'))
                 $(btn).css('background-color', 'red');
 
-
                 modal.init($('.mainsection').find("[data-target~='modal']"))
                 })
 
-                $('.mainsection .movie').filter(':even').attr('data-aos','fade-right')
-                $('.mainsection .movie').filter(':odd').attr('data-aos','fade-left')
+                //$('.mainsection .movie').filter(':even').attr('data-aos','fade-right')
+                //$('.mainsection .movie').filter(':odd').attr('data-aos','fade-left')
 
                 return;
             }
