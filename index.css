@@ -595,6 +595,7 @@ a:active {
   }
   .mainsection .movie {
     width: 47%;
+    tr
   }
 
   .mainsection .movie:nth-child(4n + 0):hover {
@@ -656,6 +657,7 @@ a:active {
   input:focus {
     padding: 0px 35px;
     width: 100%;
+    box-sizing: border-box;
   }
 
   .movie__details:after {

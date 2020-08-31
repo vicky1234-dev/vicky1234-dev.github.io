@@ -49,8 +49,13 @@ const buttonlistener = {
 
                 modal.init($('.mainsection').find("[data-target~='modal']"))
                 })
+
+                $('.mainsection .movie').filter(':even').attr('data-aos','fade-right')
+                $('.mainsection .movie').filter(':odd').attr('data-aos','fade-left')
+
                 return;
             }
+            
 
             $(document).off('scroll')
             $(`.${btn.previousElementSibling.classList[0]}`).slick('unslick')
@@ -60,6 +65,8 @@ const buttonlistener = {
 
             document.querySelectorAll('.section:not(.mainsection)').forEach((element) => {
                 element.classList.add('displayNone')
+                console.log($('.mainsection .movie').filter(':even'))
+
             })
         })
             
