@@ -54,13 +54,41 @@ const buttonlistener = {
 
                 return;
             }
-            
 
             $(document).off('scroll')
             $(`.${btn.previousElementSibling.classList[0]}`).slick('unslick')
 
             btn.previousElementSibling.classList.add('more__movies')
             btn.parentNode.classList.add('mainsection')
+
+            var txt2 = $(`<button class='goback'>Close button</button>`).text("Homepage");   // Create with jQuery
+            $('.mainsection').prepend(txt2)
+            
+            txt2.click(function(){
+                $('.displayNone').removeClass('displayNone')
+                $('.mainsection').removeClass('mainsection')
+
+                addSlick('more__movies', $('.more__movies').get() )
+                scrollLoad.init({
+                    element: `.section:not(.loaded) .movieClass`,
+                    onReach(element, config) {
+
+                        movies.c = movies.c + 1;
+                        element.classList.remove('lazy');
+                        $(element).parent().addClass('loaded')
+
+                        let key =  element.parentNode.dataset.lzscrollSection ;
+                        movies.displayHomepage(movies.getlink(key), element, false).then((resp) => {
+
+                            addSlick(element.classList[0],element);
+                            modal.init($(element).find("[data-target~='modal']"))
+
+                        });
+                    }
+                }) 
+                $(this).parent().find('.more__movies').removeClass('more__movies')
+                $(this).remove()
+            })
 
             document.querySelectorAll('.section:not(.mainsection)').forEach((element) => {
                 element.classList.add('displayNone')

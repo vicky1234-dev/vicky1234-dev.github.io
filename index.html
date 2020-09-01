@@ -148,8 +148,22 @@
         <script src="pagination.js"></script>
         <script src="buttonlistener.js"></script>
         <script src="modal.js"></script>
-        <script>
-            AOS.init();
+        <script id="template" type="x-tmpl-mustache">
+            <div class ="movie" data-id = "{{movie.id}}" data-target = 'modal' >
+                <div class="movie__wrapper">
+                   <div class = "movie__image" style="padding-top:153%;background-image: url('https://image.tmdb.org/t/p/w200{{movie.poster_path}}'), url('images/Default.png');" >
+                        <i class = "visibilityhidden fas fa-play-circle" aria - hidden = "true" ></i>  
+                    </div>
+                      <div class = 'movie__details'>
+                          <p class="movie__name">{{movie.original_title}}</p>
+                          <p class='movie__viewcount'>{{movie.vote_count}} voting</p>
+                          <span class='movie__genres'>{this.genres}</span>
+                          <span class='movie__genres'>{this.genres}</span>
+                          <span class='movie__genres'>{this.genres}</span>
+                          <p class="movie__info">{{movie.overview}}</p>
+                      </div>
+                  </div>
+              </div>
           </script>
 
         <script> 
@@ -167,6 +181,7 @@
                         movies.c = movies.c + 1;
                         element.classList.remove('lazy');
 
+                        $(element).parent().addClass('loaded')
                         let key =  element.parentNode.dataset.lzscrollSection ;
                         movies.displayHomepage(movies.getlink(key), element, false).then((resp) => {
 
@@ -181,7 +196,7 @@
             }       
 
             function addSlick (classname , element) {                         //addSlick('movieClass');
-                
+                console.log(classname)
                 $(`.${classname}`).slick({                        // make slick properties
                     infinite: true,
                     slidesToShow: 6.0,
@@ -226,9 +241,6 @@
                     $(".slick-next").html('<i class="fas fa-chevron-right" style="font-size:29px;"></i>');  //slick button maker
                                         console.log('htSlide');
                     
-                    if(window.innerWidth<610) {
-                    }
-
                     $(element).find('.last-active').removeClass('last-active')
                     $(element).find('.slick-active').last().addClass('last-active')
 

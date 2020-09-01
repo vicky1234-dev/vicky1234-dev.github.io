@@ -1,9 +1,10 @@
 const scrollLoad = {
     init(object) {
-
+        
         this._config = object
         this.sections = []
         // this._loadedSections = 0;
+        console.log(object.element)
         $(`${object.element}`).addClass('lazy')
 
         this._handler = function(){

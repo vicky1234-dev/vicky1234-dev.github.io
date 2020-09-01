@@ -388,6 +388,8 @@ a:active {
   position: relative;
   border-radius: 5px;
   background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .maxheight {
@@ -444,6 +446,21 @@ a:active {
   -webkit-animation: spin 2s linear infinite;
   animation: spin 1.5s linear infinite;
   display: inline-block;
+}
+
+.goback {
+  background-color: white;
+  color: #e50914;
+  border: none;
+  border-radius: 5px;
+  margin-left: 21px;
+  margin-right: 20px;
+  cursor: pointer;
+  padding: 13px 19px;
+}
+
+.goback:focus {
+  outline: none;
 }
 
 @media screen and (max-width: 1440px) {
@@ -595,7 +612,7 @@ a:active {
   }
   .mainsection .movie {
     width: 47%;
-    tr
+    
   }
 
   .mainsection .movie:nth-child(4n + 0):hover {
