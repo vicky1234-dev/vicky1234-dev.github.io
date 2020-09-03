@@ -400,9 +400,6 @@ a:active {
   overflow: hidden;
 }
 
-.mainsection .movie:nth-child(4n + 0):hover {
-  transform: scale3d(1.2, 1.2, 1) translateX(-20px) perspective(500px);
-}
 
 .slick-current:hover {
   transform: scale3d(1.2, 1.2, 1) translateX(39px) perspective(500px);
@@ -412,8 +409,13 @@ a:active {
   transform: scale3d(1.2, 1.2, 1) translateX(-40px) perspective(500px);
 }
 
-.mainsection .movie:nth-child(4n + 1):hover {
-  transform: scale3d(1.2, 1.2, 1) translateX(25px) perspective(500px);
+.mainsection .movie:nth-child(6n + 0):hover {
+  transform: scale3d(1.2, 1.2, 1) translateX(-20px) perspective(500px);
+}
+
+
+.mainsection .movie:nth-child(6n + 1):hover {
+  transform: scale3d(1.2, 1.2, 1) translateX(19px) perspective(500px);
 }
 
 .mainsection .movie {
@@ -440,7 +442,7 @@ a:active {
   display: inline-block;
 }
 
-@media screen and (max-width: 1410px) {
+@media screen and (max-width: 1440px) {
   .movie__details {
     margin: auto;
     left: 50%;
@@ -490,22 +492,23 @@ a:active {
   .slick-next {
     left: 95%;
   }
+
 }
 
 @media screen and (max-width: 1211px) {
   .mainsection .movie:nth-child(4n + 1):hover {
-    transform: scale3d(1.4, 1.4, 1) translateX(0px) perspective(500px);
+    transform: scale3d(1.2, 1.2, 1) translateX(0px) perspective(500px);
   }
 
   .mainsection .movie:nth-child(4n + 0):hover {
-    transform: scale3d(1.4, 1.4, 1) translateX(0px) perspective(500px);
+    transform: scale3d(1.2, 1.2, 1) translateX(0px) perspective(500px);
   }
   .mainsection .movie:nth-child(3n):hover {
-    transform: scale3d(1.4, 1.4, 1) translateX(-20px) perspective(500px);
+    transform: scale3d(1.2, 1.2, 1) translateX(-20px) perspective(500px);
   }
 
   .mainsection .movie:nth-child(3n + 1):hover {
-    transform: scale3d(1.4, 1.4, 1) translateX(30px) perspective(500px);
+    transform: scale3d(1.2, 1.2, 1) translateX(30px) perspective(500px);
   }
 
   .more__movies {
