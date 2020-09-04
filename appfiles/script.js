@@ -6,19 +6,7 @@ document.body.onload = function() {             //making splash page before body
     },2000)
 }
 
-var month = new Array();
-month[0] = "January";
-month[1] = "February";
-month[2] = "March";
-month[3] = "April";
-month[4] = "May";
-month[5] = "June";
-month[6] = "July";
-month[7] = "August";
-month[8] = "September";
-month[9] = "October";
-month[10] = "November";
-month[11] = "December";
+var month = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
 
 function gethour(hours) {   //12 hour time
 
@@ -48,7 +36,7 @@ function getam (hours) {
 const questions = [                     //questions array
         {
             question: "What is your name?",
-            choice:'namechoice'
+            choice:'namechoice',
         },
         {
             question: "Who is the best cricketer in the world?",
@@ -190,7 +178,6 @@ const app = {
                     return true
                 }
 
-                
                 break;
 
             case 'checkbox':        //input type checkbox for third page

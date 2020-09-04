@@ -13,11 +13,11 @@ const mysql = require('mysql');
  con.connect(function (err) {                            //connect to mysql
      if (err) throw err;
 
-     con.query("CREATE DATABASE finaldb", function (err, result) {         //Create database
+     con.query("CREATE DATABASE finaldb2", function (err, result) {         //Create database
          if (err) throw err;
      });
 
-      var sql = "use finaldb";               //use database
+      var sql = "use finaldb2";               //use database
       con.query(sql, function (err, result) {
           if (err) throw err;
       });
@@ -28,7 +28,7 @@ const mysql = require('mysql');
       });
 
  });
-
+ 
 
 app.use(bodyParser.urlencoded({
     extended: false
